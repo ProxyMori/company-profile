@@ -34,7 +34,7 @@ function About() {
               <h3 className="text-xl font-bold">Background</h3>
 
               <p className="text-gray-400 text-sm md:text-base mt-4 leading-7">
-                ApexWeb began as a small team passionate about web development
+                Websign began as a small team passionate about web development
                 and digital technology.
               </p>
             </div>
