@@ -10,9 +10,7 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleLogin = async () => {
     try {
       const response = await axiosInstance.post("/users/login", {
         login: email,
@@ -28,7 +26,6 @@ function Login() {
       console.log(error);
     }
   };
-
   return (
     <div className="bg-[#0F1115] text-white min-h-screen flex items-center justify-center px-6">
       <div className="w-full max-w-md">
@@ -73,7 +70,7 @@ function Login() {
           </div>
 
           <Button
-            type="submit"
+            onClick={handleLogin}
             className="w-full bg-[#F59E0B] text-black hover:bg-[#D97706]"
           >
             Login

@@ -11,9 +11,7 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleRegister = async () => {
     try {
       await axiosInstance.post("/users/register", {
         name: name,
@@ -42,10 +40,7 @@ function Register() {
           </p>
         </div>
 
-        <form
-          onSubmit={handleRegister}
-          className="bg-[#171A20] border border-[#24272E] rounded-xl p-8 space-y-6"
-        >
+        <div className="bg-[#171A20] border border-[#24272E] rounded-xl p-8 space-y-6">
           <div>
             <label className="text-sm font-medium">Name</label>
 
@@ -83,7 +78,7 @@ function Register() {
           </div>
 
           <Button
-            type="submit"
+            onClick={handleRegister}
             className="w-full bg-[#F59E0B] text-black hover:bg-[#D97706]"
           >
             Create Account
@@ -94,7 +89,7 @@ function Register() {
               Login
             </a>
           </p>
-        </form>
+        </div>
       </div>
     </div>
   );
